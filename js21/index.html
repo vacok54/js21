@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cities = [
+    {name: 'Москва', population: 12506468},
+    {name: 'Санкт-Петербург', population: 5351935},
+    {name: 'Новосибирск', population: 1612833},
+    {name: 'Калининград', population: 482443},
+    {name: 'Калуга', population: 336726}
+]
+
+cities.unshift({name: 'Махачкала', population: '692231'})
+cities.push({name: 'Владикавказ', population: '151516'})
+cities.forEach(obj => {
+    console.log(' City: ' + obj.name + ', Population: ' + obj.population)
+})
+
+const CitiesAfter = cities.filter(obj => obj.population > 1000000)
+console.log(CitiesAfter)
+
+let CitiesFuture = cities.map(obj => obj.population * 1.5)
+console.log(CitiesFuture)
+
+let CitiesPopulation = CitiesFuture.reduce((cip, population) => cip + population, 0);
+console.log(CitiesPopulation)
+    </script>
+</body>
+</html>
